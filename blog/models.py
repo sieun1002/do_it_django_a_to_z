@@ -8,6 +8,9 @@ class Post(models.Model):
   #DB col을 생성하는데, model -> content
   content = models.TextField()
 
+  head_image = models.ImageField(upload_to = 'blog/images/%Y/%m/%d/', blank=True)
+  file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
+
   #DB col을 생성하는데, model -> 시간
   #현재 시간을 새로 작성할 때 바로 넣기
   created_at = models.DateTimeField(auto_now_add = True)
