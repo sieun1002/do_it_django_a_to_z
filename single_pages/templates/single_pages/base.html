@@ -21,7 +21,7 @@
 {% load static %}
 <html>
   <head>
-    <title>Blog</title>
+    <title>개발자 조시은입니다.</title>
     <link
       href="{% static 'blog/bootstrap/bootstrap.min.css' %}"
       rel="stylesheet"
@@ -35,7 +35,7 @@
   </head>
 
   <body>
-    {%include 'single_pages/navbar.html'%} {%include 'blog/modal.html'%}
+    {%include 'single_pages/navbar.html'%} {%include 'blog/single_pages.html'%}
 
     <div class="container my-3">
       <div class="row">
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    {%include 'blog/footer.html'%}
+    {%include 'single_pages/footer.html'%}
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
