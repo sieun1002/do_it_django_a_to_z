@@ -47,6 +47,16 @@ def category_page(request, slug):
     }
   )
 
+def tag_page(request, slug):
+  tag = Tag.objects.get(slug=slug)
+  post_list = tag.post_set.all()
+  return render(request, 'blog/post_list.html', {
+    'post_list': post_list,
+    'tag': tag,
+    'categories': Category.objects.all(),
+    'no_category_post_count': Post.objects.filter(category=None).count()
+  })
+
 #CBV 형식
 class PostList(ListView):
   model = Post 

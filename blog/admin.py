@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import Post, Category
+from .models import Post, Category, Tag
 
 # Register your models here.
-from .models import Post
 
 admin.site.register(Post)
 
@@ -10,3 +9,9 @@ class CategoryAdmin(admin.ModelAdmin):
   prepopulated_fields = {'slug':('name',)}
 
 admin.site.register(Category, CategoryAdmin)
+
+class TagAdmin(admin.ModelAdmin):
+  prepopulated_fields = {'slug': ('name',)}
+
+#admin에 들어가서 조작할 수 있도록
+admin.site.register(Tag, TagAdmin)
